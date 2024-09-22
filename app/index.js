@@ -45,6 +45,16 @@ app.post("/api/logout", (req, res) => {
 app.get("/", authorization.SoloPublico, (req, res) => res.sendFile(__dirname + "/pages/login.html"));
 app.get("/register", authorization.SoloPublico, (req, res) => res.sendFile(__dirname + "/pages/register.html"));
 app.get("/admin", authorization.SoloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin.html"));
+app.get("/index", authorization.SoloAdmin, (req, res) => res.sendFile(__dirname + "/pages/index.html"));
+app.get("/service", authorization.SoloAdmin, (req, res) => res.sendFile(__dirname + "/pages/servicio.html"));
+
+/* app.get("/sigmmar", authorization.SoloAdmin, (req, res) => {
+    res.sendFile(path.join(__dirname, "website", "index.html"));
+});*/
+app.get("/sigmar-servicio", authorization.SoloAdmin, (req, res) => {
+    res.sendFile(path.join(__dirname, "website", "servicio.html"));
+});
+
 
 // Rutas de autenticación
 app.post("/api/register", authentication.register);
