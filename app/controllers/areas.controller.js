@@ -11,20 +11,23 @@ export const methods = {
         }
     },
 
-    createArea: async (req, res) => {
-        try {
-            const { area_nombre, area_descripcion } = req.body;
-            const area_directorio_img = req.file ? `/media/${req.file.filename}` : null;
-            const [result] = await connection.query(
-                'INSERT INTO area (area_nombre, area_descripcion, area_directorio_img, area_estado) VALUES (?, ?, ?, 1)',
-                [area_nombre, area_descripcion, area_directorio_img]
-            );
-            res.json({ id: result.insertId, message: "Área creada exitosamente", redirect: "/area" });
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({ message: "Error al crear el área" });
-        }
-    },
+// Controlador para crear un área
+createArea: async (req, res) => {
+
+     try {
+        const { area_nombre, area_descripcion } = req.body;
+        const area_directorio_img = req.file ? `/media/${req.file.filename}` : null;
+        const [result] = await connection.query(
+            'INSERT INTO area (area_nombre, area_descripcion, area_directorio_img, area_estado) VALUES (?, ?, ?, 1)',
+            [area_nombre, area_descripcion, area_directorio_img]
+        );
+        res.json({ id: result.insertId, message: "Área creada exitosamente", redirect: "/area" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al crear el área" });
+    } 
+},
+
 
     updateArea: async (req, res) => {
         try {

@@ -22,7 +22,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     });
     
     // Si la respuesta no es exitosa, muestra el mensaje de error
-    if (!res.ok) return mensajeError.classList.toggle("escondido", false);
+    if (!res.ok) return alert("Error al iniciar sesión. Por favor, inténtelo de nuevo.");
     
     // Convierte la respuesta a JSON
     const resJson = await res.json();

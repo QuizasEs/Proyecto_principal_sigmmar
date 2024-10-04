@@ -4,41 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <script src="/js/register.js" defer></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <main>
-        <div class="fomr-container">
-            <h1>Crear cuenta</h1>
-            <p>Crea tu cuenta aqui</p>
-            <form action="" id="register-form">
-                <label for="user" class="sr-only">User</label>
-                <input type="text" name="user" id="user" placeholder="Nick usuario">
-                
-                <label for="password" class="sr-only">Password</label>
-                <input type="password" name="password" id="password" placeholder="contraseña">
-
-                <label for="email" class="sr-only">email</label>
-                <input type="email" name="email" id="email" placeholder="correo">
-
-                <label for="username" class="sr-only">username</label>
-                <input type="text" name="username" id="username" placeholder="nombre de usuario">
-                
-                <label for="lastnamefather" class="sr-only">lastnamefather</label>
-                <input type="text" name="lastnamefather" id="lastnamefather" placeholder="Apellido paterno">
-
-                <label for="lastnamemother" class="sr-only">lastnamemother</label>
-                <input type="text" name="lastnamemother" id="lastnamemother" placeholder="Apellido materno">
-
-                <label for="telefono" class="sr-only">telefono</label>
-                <input type="text" name="telefono" id="telefono" placeholder="telefono">
-
-
-                <button type="submit"> Iniciar sesion</button>
-                <p class="error escondido">Error al registrar</p>
-            </form>
-            <p>inicia sesion <a href="/">aqui</a></p>
+    <main class="align-items-center">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Crear cuenta</h1>
+                        <p>Crea tu cuenta aquí</p>
+                        <form action="" id="register-form">
+                            
+                            <label for="user" class="form-label">Usuario</label>
+                            <input type="text" name="user" id="user" placeholder="Nick usuario" class="form-control">
+                        
+                            
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
+                        
+                            
+                            <label for="email" class="form-label">Correo</label>
+                            <input type="email" name="email" id="email" placeholder="Correo" class="form-control">
+                        
+                            
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" name="username" id="username" placeholder="Nombre de usuario" class="form-control">
+                        
+                            
+                            <label for="lastnamefather" class="form-label">Apellido paterno</label>
+                            <input type="text" name="lastnamefather" id="lastnamefather" placeholder="Apellido paterno" class="form-control">
+                        
+                            
+                            <label for="lastnamemother" class="form-label">Apellido materno</label>
+                            <input type="text" name="lastnamemother" id="lastnamemother" placeholder="Apellido materno" class="form-control">
+                        
+                            
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="text" name="telefono" id="telefono" placeholder="Teléfono" class="form-control">
+                        
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </form>
+                        <p>Inicia sesión <a href="/">aquí</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
