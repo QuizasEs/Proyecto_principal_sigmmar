@@ -11,7 +11,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const password = e.target.children.password.value;
     
     // Envía una solicitud POST a la URL especificada con los datos del formulario
-    const res = await fetch("http://localhost:4000/api/login", {
+    const res = await fetch("/api/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json" // Especifica que el contenido es JSON

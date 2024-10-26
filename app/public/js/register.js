@@ -12,7 +12,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     try {
         
         // Envía una solicitud POST a la URL especificada con los datos del formulario
-        const res = await fetch("http://localhost:4000/api/register", {
+        const res = await fetch("/api/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json" // Especifica que el contenido es JSON
