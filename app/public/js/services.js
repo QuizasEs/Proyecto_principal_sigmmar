@@ -1,29 +1,49 @@
 // Llama a la función para cargar las áreas al cargar la página
-document.addEventListener('DOMContentLoaded', loadAreas);
-//muestra los areas disponibles directamente dentro de la pagina web
+document.addEventListener('DOMContentLoaded', getServices);
+
+// Función asíncrona para obtener y mostrar las áreas disponibles
 async function getServices() {
-    try{
-        const response = await fetch('/api/services');
+    try {
+        // Realiza una solicitud a la API para obtener los servicios
+        const response = await fetch('/api/areas'); // Asegúrate de que esta URL coincida con tu backend
+        if (!response.ok) throw new Error(`Error en la solicitud: ${response.statusText}`);
+        
         const data = await response.json();
 
-        const container=document.getElementById('areasContainer');
-        container.innerHTML = '';//limpiamos eel contenedor antes de agregar nuevas areas
+        // Obtiene el contenedor donde se mostrarán las áreas
+        const container = document.getElementById('areasContainer');
+        if (!container) throw new Error('Contenedor "areasContainer" no encontrado en el DOM');
 
-        areas.forEach((area, index) => {
+        // Limpia el contenedor antes de agregar nuevas áreas
+        container.innerHTML = '';
+
+        // Itera sobre cada área recibida de la API
+        data.forEach((area, index) => {
+            // Crea un nuevo elemento div para cada área
             const areaElement = document.createElement('div');
+            // Agrega clases al elemento div para el estilo
             areaElement.classList.add('grid-item', `grid-item${index + 1}`);
+            // Define el contenido HTML del elemento div
             areaElement.innerHTML = `
                 <div class="carta">
-                    <h3>${area.nombre}</h3>
-                    <p>${area.descripcion}</p>
-                    <a href="/service/${area.id}">
+                    <img src="${area.area_directorio_img}" alt="${area.area_nombre}">
+                    <h3>${area.area_nombre}</h3>
+                    <p>${area.area_descripcion}</p>
+                    <a href="/service/${area.area_id}">
                         <button>Ver más</button>
                     </a>
                 </div>
             `;
+            // Agrega el elemento div al contenedor
             container.appendChild(areaElement);
         });
-    }catch(error){
-        console.log(error);
+
+    } catch (error) {
+        // Muestra cualquier error en la consola
+        console.error('Error al obtener servicios:', error);
     }
+}
+async function getSubServices(area_id) {
+    //envia la id al precionar el boton de ver mas
+    
 }

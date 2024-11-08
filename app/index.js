@@ -9,7 +9,8 @@ import { methods as authorization } from "./middlewares/authorization.js";
 import { methods as areasController } from "./controllers/areas.controller.js";
 import { methods as userMethods } from "./controllers/usuarios.controller.js";
 import { methods as subAreasController } from "./controllers/sub_areas.controller.js";
-//import { methods as mensajesController } from "./controllers/mensajes.controller.js";
+import { methods as servicesController } from "./controllers/servicesController.js";
+
 
 // Soluciona el problema de __dirname en ES6
 import path from "path";
@@ -162,6 +163,8 @@ app.delete(
 app.get("/mensajes", authorization.SoloAdmin, (req, res) =>
   res.sendFile(path.join(__dirname, "/pages/admin/mensajes.html"))
 );
-/*
-app.get("/api/mensajes", mensajesController.getMensajes);
-app.post("/api/mensajes", mensajesController.createMensaje); */
+//rutas para sevicios controller
+app.get("/api/services", servicesController.getServices);
+
+//ruta de redireccion desde el cuadro grid a la página de detalle
+app.get("/api/services/:id", servicesController.getServiceById);
