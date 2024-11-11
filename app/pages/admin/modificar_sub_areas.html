@@ -51,7 +51,7 @@
         <form id="editSubAreaForm">
             <div class="form-group">
                 <label for="subAreaNombre">Nombre de la sub área:</label>
-                <input type="text" class="form-control" id="subAreaNombre" name="sub_nombre"  required>
+                <input type="text" class="form-control" id="subAreaNombre" name="sub_nombre" value="Goayavas" required>
             </div>
             <div class="form-group">
                 <label for="subAreaArea">Área perteneciente:</label>
@@ -61,14 +61,12 @@
             </div>
             <div class="form-group">
                 <label for="subAreaDescripcion">Descripción de la sub área:</label>
-                <input type="text" class="form-control" id="subAreaDescripcion" name="sub_descripcion" required>
+                <input type="text" class="form-control" id="subAreaDescripcion" name="sub_descripcion" value="Realidad aumentada nmms..." required>
             </div>
             <div class="form-group">
                 <label for="subAreaDirectorioImg">Imagen de la sub área:</label>
-                <input type="file" class="form-control-file" id="subAreaDirectorioImg" name="sub_directorio_img" accept="image/*" onchange="previewImage(event)" required>
-                <img id="imagePreview" src="" alt="Vista previa de la imagen" style="display:none; margin-top:10px; width: 100px; height: auto;">
+                <input type="file" class="form-control-file" id="subAreaDirectorioImg" name="sub_directorio_img" required>
             </div>
-
             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
         </form>
     </div>

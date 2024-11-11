@@ -6,35 +6,32 @@
     <title>Gestión de Áreas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body> 
+   
     <div class="container mt-5">
-        <h1 class="mb-4">Gestión de Áreas</h1>
+        <h1 class="mb-4 text-center fw-bold text-primary">Gestión de Áreas</h1>
 
         <!-- Formulario de registro -->
-        <div class="card mb-4">
-            <div class="card-header">Registrar Nueva Área</div>
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-header bg-primary text-white fw-bold">Registrar Nueva Área</div>
             <div class="card-body">
                 <form id="areaFormCreate">
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="areaNombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="areaNombre" name="area_nombre" required>
+                        <input type="text" class="form-control border-primary" id="areaNombre" name="area_nombre" required>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="areaDescripcion" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="areaDescripcion" name="area_descripcion" required></textarea>
+                        <textarea class="form-control border-primary" id="areaDescripcion" name="area_descripcion" required></textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="areaDirectorioImg" class="form-label">Directorio de Imagen</label>
-                        <input type="file" class="form-control" id="areaDirectorioImg" name="area_directorio_img" required>
-                    </div>                    
-                    <button type="submit" class="btn btn-primary">Registrar</button>
+                        <input type="file" class="form-control border-primary" id="areaDirectorioImg" name="area_directorio_img" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Registrar</button>
                 </form>
             </div>
         </div>
-        
-                
-
-   
     </div>
 
     <script src="/js/areas.js"></script>

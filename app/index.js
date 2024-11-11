@@ -38,7 +38,7 @@ const upload = multer({ storage: storage });
 
 // Crea una instancia de la aplicación Express
 const app = express();
-app.set("port", process.env.PORT || 5000); // Configura el puerto a partir de las variables de entorno o por defecto 4000
+app.set("port", process.env.PORT || 5000); // Configura el puerto a partir de las variables de entorno o por defecto 5000
 
 // Configuración de middleware
 app.use(express.static(path.join(__dirname, "public"))); // Sirve archivos estáticos desde el directorio "public"
@@ -167,4 +167,4 @@ app.get("/mensajes", authorization.SoloAdmin, (req, res) =>
 app.get("/api/services", servicesController.getServices);
 
 //ruta de redireccion desde el cuadro grid a la página de detalle
-app.get("/api/services/:id", servicesController.getServiceById);
+app.get("/api/services/:area_id", servicesController.getSubservices);

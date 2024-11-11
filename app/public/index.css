@@ -241,6 +241,18 @@ justify-content: center;
     resize: vertical;
     min-height: 80px;
 }
+.direccion {
+    background-color: rgb(30, 30, 30);
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+.direccion .container {
+    text-align: center;
+    padding: 100px 12px;
+}
 
 /* Footer */
 footer {

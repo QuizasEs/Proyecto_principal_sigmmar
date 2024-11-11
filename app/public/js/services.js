@@ -29,9 +29,10 @@ async function getServices() {
                     <img src="${area.area_directorio_img}" alt="${area.area_nombre}">
                     <h3>${area.area_nombre}</h3>
                     <p>${area.area_descripcion}</p>
-                    <a href="/service/${area.area_id}">
+                    <a onclick="getSubServices(${area.area_id})">
                         <button>Ver más</button>
                     </a>
+
                 </div>
             `;
             // Agrega el elemento div al contenedor
@@ -44,6 +45,8 @@ async function getServices() {
     }
 }
 async function getSubServices(area_id) {
-    //envia la id al precionar el boton de ver mas
-    
+
+        //redirigir a la página de detalle de los sub áreas
+        window.location.href = `/service?id=${area_id}`;
+
 }

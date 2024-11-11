@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="../../public/media/logo.jpeg" alt="Logo Empresarial" class="d-inline-block align-text-top" style="height: 40px;">
+                    <img src="../public/media/logo.jpeg" alt="Logo Empresarial" class="d-inline-block align-text-top" style="height: 40px;">
                     Sigmmar
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        
+
                         <button id="logout-button" class="btn btn-outline-danger">Cerrar Sesión</button>
                     </div>
                 </div>
@@ -47,26 +47,25 @@
         </nav>
         
     </header>
-    <div class="container mt-5">
-        <h1 class="mb-4">Gestión de Áreas</h1>
-        <div class="d-flex justify-content-end mb-3">
 
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center fw-bold text-secondary">Gestión de Áreas</h1>
+        <div class="d-flex justify-content-end mb-3">
             <button type="submit" class="btn btn-primary" onclick="window.location.href ='/crear_area'">Crear Área</button>
         </div>
         <!-- Tabla de áreas -->
-        <div class="card">
-            <div class="card-header">Áreas Registradas</div>
-            
-            <div class="card-body">
-                <table class="table">
-                    <thead>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white fw-bold">Áreas Registradas</div>
+            <div class="card-body p-0">
+                <table class="table table-hover table-striped mb-0">
+                    <thead class="table-light">
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Directorio de Imagen</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Directorio de Imagen</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="areaTableBody">
@@ -76,6 +75,8 @@
             </div>
         </div>
     </div>
+
     <script src="/js/areas.js"></script>
+
 </body>
 </html>

@@ -114,15 +114,15 @@ function loadArea() {
         areas.forEach((area) => {
           const row = document.createElement("tr"); // Crea una nueva fila de tabla para cada área
           row.innerHTML = `
-                        <td>${area.area_id}</td>
-                        <td>${area.area_nombre}</td>
-                        <td>${area.area_descripcion}</td>
-                        <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" style="width: 100px; height: auto;"></td>
-                        <td>${area.area_estado}</td>
-                        <td>
-                            <button class="btn btn-sm btn-primary" onclick="editArea(${area.area_id})">Editar</button>
-                            <button class="btn btn-sm btn-danger" onclick="deleteArea(${area.area_id})">Eliminar</button>
-                        </td>
+                            <td>${area.area_id}</td>
+                            <td>${area.area_nombre}</td>
+                            <td>${area.area_descripcion}</td>
+                            <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" class="img-fluid rounded" style="width: 100px; height: auto;"></td>
+                            <td>${area.area_estado}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary me-1 mx+2" onclick="editArea(${area.area_id})">Editar</button>
+                                <button class="btn btn-sm btn-outline-danger" onclick="deleteArea(${area.area_id})">Eliminar</button>
+                            </td>
                     `; // Define el contenido de la fila con los datos del área
           fragment.appendChild(row); // Añade la fila al fragmento
         });
