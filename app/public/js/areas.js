@@ -116,7 +116,9 @@ function loadArea() {
           row.innerHTML = `
                             <td>${area.area_id}</td>
                             <td>${area.area_nombre}</td>
-                            <td>${area.area_descripcion}</td>
+                            <div id="desc" >
+                              <td>${area.area_descripcion}</|td>
+                            </div>
                             <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" class="img-fluid rounded" style="width: 100px; height: auto;"></td>
                             <td>${area.area_estado}</td>
                             <td>
@@ -270,12 +272,16 @@ async function loadAreas() {
         row.innerHTML = `
                     <td>${area.area_id}</td>
                     <td>${area.area_nombre}</td>
-                    <td>${area.area_descripcion}</td>
-                    <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" style="width: 100px; height: auto;"></td>
-                    <td>${area.area_estado}</td>
+                    <td><div style="overflow-y: auto; height: 8rem;">
+   
+                    ${area.area_descripcion}
+                    </div>
+                    </td> 
+                    <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" style="width: 140px; height: auto;"></td>
+                    <!-- <td>${area.area_estado}</td> -->
                     <td>
-                        <button class="btn btn-sm btn-primary" onclick="editArea(${area.area_id})">Editar</button>
-                        <button class="btn btn-sm btn-danger" onclick="deleteArea(${area.area_id})">Eliminar</button>
+                        <button class="btn btn-sm btn-primary m-1 px-3" onclick="editArea(${area.area_id})">Editar</button>
+                        <button class="btn btn-sm btn-danger m-1" onclick="deleteArea(${area.area_id})">Eliminar</button>
                     </td>
                 `;
         fragment.appendChild(row);

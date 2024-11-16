@@ -40,12 +40,14 @@ async function loadSubAreas() {
                 <td>${subArea.sub_id}</td>
                 <td>${subArea.sub_nombre}</td>
                 <td>${subArea.area_nombre}</td>
-                <td>${subArea.sub_descripcion}</td>
-                <td><img src="${subArea.sub_directorio_img}" alt="Imagen de ${subArea.sub_nombre}" style="width: 100px; height: auto;"></td>
+                <td> <div style="overflow-y: auto; height: 8rem;">
+                ${subArea.sub_descripcion}
+                </div></td>
+                <td><img src="${subArea.sub_directorio_img}" alt="Imagen de ${subArea.sub_nombre}" style="width: 140px; height: auto;"></td>
                 <td>${subArea.sub_estado ? 'Activo' : 'Inactivo'}</td>
                 <td>
-                    <button class="btn btn-primary" onclick="editSubArea(${subArea.sub_id})">Editar</button>
-                    <button class="btn btn-danger" onclick="deleteSubArea(${subArea.sub_id})">Eliminar</button>
+                    <button class="btn btn-primary m-1 px-3" onclick="editSubArea(${subArea.sub_id})">Editar</button>
+                    <button class="btn btn-danger m-1" onclick="deleteSubArea(${subArea.sub_id})">Eliminar</button>
                 </td>
             `;
             fragment.appendChild(row);
@@ -157,7 +159,7 @@ document.getElementById('subAreaDirectorioImg').addEventListener('change', funct
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            document.getElementById('subAreaDirectorioImg').value = e.target.result;
+            document.getElementById('subAreaDirectorioImg').value = e;
             const imagePreview = document.getElementById('imagePreview');
             imagePreview.src = e.target.result;
             imagePreview.style.display = 'block';

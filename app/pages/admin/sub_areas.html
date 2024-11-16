@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-color: #ecf0f1;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -49,29 +49,33 @@
     </header>
     <div class="container mt-5">
         <h1 class="mb-4 text-center fw-bold text-secondary">Sub Áreas</h1>
-        <div class="d-flex justify-content-end mb-3">
-            <button type="submit" class="btn btn-primary" onclick="window.location.href ='/crear_sub_areas'">Crear Sub Área</button>
-        </div>
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-primary text-white fw-bold">Áreas Registradas</div>
-            <div class="card-body p-0">
-                <table class="table table-hover table-striped mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre sub area</th>
-                            <th scope="col">Nombre area</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Imagen</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="subAreaTableBody">
-                        <!-- Las filas se cargarán aquí usando JavaScript -->
-                    </tbody>
-                </table>
+
+        <div class="W-75 bg-white shadow-lg py-4 px-4 rounded mb-5">
+            <div class="d-flex justify-content-end mb-3">
+                <button type="submit" class="btn btn-primary" onclick="window.location.href ='/crear_sub_areas'">Crear Sub Área</button>
             </div>
+    
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white fw-bold text-center">Áreas Registradas</div>
+                <div class="card-body p-0 table-responsive">
+                    <table class="table table-hover text-center" style="vertical-align: middle;">
+                        <thead class="table-light" style="vertical-align: middle;">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre sub area</th>
+                                <th scope="col">Nombre area</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subAreaTableBody">
+                            <!-- Las filas se cargarán aquí usando JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+        </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

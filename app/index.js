@@ -65,16 +65,16 @@ app.post("/api/logout", (req, res) => {
 });
 
 // Rutas
-app.get("/", authorization.SoloPublico, (req, res) =>
+app.get("/login", authorization.SoloPublico, (req, res) =>
   res.sendFile(path.join(__dirname, "/pages/login.html"))
 );
-app.get("/register", authorization.SoloPublico, (req, res) =>
+app.get("/register", authorization.SoloAdmin, (req, res) =>
   res.sendFile(path.join(__dirname, "/pages/register.html"))
 );
 app.get("/admin", authorization.SoloAdmin, (req, res) =>
   res.sendFile(path.join(__dirname, "/pages/admin.html"))
 );
-app.get("/index", (req, res) =>
+app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "/pages/index.html"))
 );
 app.get("/service", (req, res) =>
