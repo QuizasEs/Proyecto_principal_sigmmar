@@ -39,6 +39,9 @@ function loadArea() {
             document.getElementById("editAreaNombre").value = area.area_nombre;
             document.getElementById("editAreaDescripcion").value =
               area.area_descripcion;
+              document.getElementById("editAreaRequisitos").value =
+              area.area_requisitos;
+              document.getElementById("editAreaSanciones").value =
             document.getElementById("editAreaDirectorioImgActual").value =
               area.area_directorio_img; // Guarda el directorio de la imagen actual
             document.getElementById("imagePreview").src =
@@ -68,6 +71,14 @@ function loadArea() {
         "area_descripcion",
         document.getElementById("editAreaDescripcion").value
       ); // Agrega la descripción del área al FormData
+      formData.append(
+        "area_requisitos",
+        document.getElementById("editAreaRequisitos").value
+      ); // Agrega los requisitos del área al FormData
+      formData.append(
+        "area_sanciones",
+        document.getElementById("editAreaSanciones").value
+      ); // Agrega las sanciones del área al FormData
 
       // Verifica si se ha seleccionado una nueva imagen
       const imageFile = document.getElementById("editAreaDirectorioImg")
@@ -116,8 +127,15 @@ function loadArea() {
           row.innerHTML = `
                             <td>${area.area_id}</td>
                             <td>${area.area_nombre}</td>
-                            <div id="desc" >
+                            <div>
                               <td>${area.area_descripcion}</|td>
+                            </div>                            
+                            
+                            <div>
+                              <td>${area.area_requisitos}</|td>
+                            </div>     
+                            <div>
+                              <td>${area.area_sanciones}</|td>
                             </div>
                             <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" class="img-fluid rounded" style="width: 100px; height: auto;"></td>
                             <td>${area.area_estado}</td>
@@ -228,6 +246,14 @@ document
       "area_descripcion",
       document.getElementById("editAreaDescripcion").value
     );
+    formData.append(
+      "area_requisitos",
+      document.getElementById("editAreaRequisitos").value
+    );
+    formData.append(
+      "area_sanciones",
+      document.getElementById("editAreaSanciones").value
+    );
 
     const imageFile = document.getElementById("editAreaDirectorioImg").files[0];
     if (imageFile) {
@@ -272,10 +298,14 @@ async function loadAreas() {
         row.innerHTML = `
                     <td>${area.area_id}</td>
                     <td>${area.area_nombre}</td>
-                    <td><div style="overflow-y: auto; height: 8rem;">
-   
-                    ${area.area_descripcion}
-                    </div>
+                    <td>
+                      <div style="overflow-y: auto; height: 8rem;">${area.area_descripcion}</div>
+                    </td> 
+                     <td>
+                      <div style="overflow-y: auto; height: 8rem;">${area.area_requisitos}</div>
+                    </td> 
+                    <td>
+                      <div style="overflow-y: auto; height: 8rem;">${area.area_sanciones}</div>
                     </td> 
                     <td><img src="${area.area_directorio_img}" alt="Imagen de ${area.area_nombre}" style="width: 140px; height: auto;"></td>
                     <!-- <td>${area.area_estado}</td> -->
@@ -296,9 +326,7 @@ async function loadAreas() {
 
 // Función asincrónica para registrar un área
 
-document
-  .getElementById("areaFormCreate")
-  ?.addEventListener("submit", async function (e) {
+document.getElementById("areaFormCreate")?.addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevenir comportamiento predeterminado del formulario
 
     try {
@@ -342,16 +370,7 @@ function editArea(area_id) {
   window.location.href = `/modificar_area?id=${area_id}`; // Redirigir a la página de edición
 }
 
-// Función para agregar botón para volver a la tabla
-/* function addBackToTableButton() {
-    const button = document.createElement('button');
-    button.textContent = 'Volver a la tabla';
-    button.onclick = () => window.location.href = '/area'; // Cambia esta ruta a la de tu tabla
-    button.style.marginTop = '10px';
-    button.class="btn btn-primary"
-    document.body.appendChild(button);
-}
- */
+
 // Guardar cambios del área editada
 document
   .getElementById("saveAreaChanges")
@@ -366,6 +385,14 @@ document
       formData.append(
         "area_descripcion",
         document.getElementById("editAreaDescripcion").value
+      );
+      formData.append(
+        "area_requisitos",
+        document.getElementById("editAreaRequisitos").value
+      );
+      formData.append(
+        "area_sanciones",
+        document.getElementById("editAreaSanciones").value
       );
 
       const imageFile = document.getElementById("editAreaDirectorioImg")
@@ -402,10 +429,10 @@ async function loadArea() {
       if (area) {
         document.getElementById("editAreaId").value = area.area_id;
         document.getElementById("editAreaNombre").value = area.area_nombre;
-        document.getElementById("editAreaDescripcion").value =
-          area.area_descripcion;
-        document.getElementById("editAreaDirectorioImgActual").value =
-          area.area_directorio_img; // Guardar la imagen actual
+        document.getElementById("editAreaDescripcion").value =area.area_descripcion;
+        document.getElementById("editAreaRequisitos").value =area.area_requisitos;
+        document.getElementById("editAreaSanciones").value =area.area_sanciones;
+        document.getElementById("editAreaDirectorioImgActual").value =area.area_directorio_img; // Guardar la imagen actual
         document.getElementById("imagePreview").src = area.area_directorio_img;
         document.getElementById("imagePreview").style.display = "block";
       } else {

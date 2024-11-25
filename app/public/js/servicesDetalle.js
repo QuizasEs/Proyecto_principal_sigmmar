@@ -26,7 +26,7 @@ async function getServicesDetalle() {
         areaElement.classList.add('area-details');
         areaElement.innerHTML = `
             <h2>${area.area_nombre}</h2>
-            <img src="${area.area_directorio_img}" alt="${area.area_nombre}">
+            <img src="${area.area_directorio_img}" alt="${area.area_nombre}" style="width:50%;height:auto;">
             <p>${area.area_descripcion}</p>
         `;
         container.appendChild(areaElement);
@@ -36,9 +36,11 @@ async function getServicesDetalle() {
             const subAreaElement = document.createElement('div');
             subAreaElement.classList.add('sub-area-item');
             subAreaElement.innerHTML = `
-                <h3>${subArea.sub_nombre}</h3>
-                <img src="${subArea.sub_directorio_img}" alt="${subArea.sub_nombre}">
-                <p>${subArea.sub_descripcion}</p>
+                <div>
+                    <h3>${subArea.sub_nombre}</h3>
+                    <img src="${subArea.sub_directorio_img}" alt="${subArea.sub_nombre}" style="width:40%;height:auto;">
+                    <p>${subArea.sub_descripcion}</p>
+                </div>
             `;
             container.appendChild(subAreaElement);
         });

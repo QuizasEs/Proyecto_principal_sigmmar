@@ -19,7 +19,7 @@
                 <form id="editSubAreaForm">
                     <div class="mb-3">
                         <label for="subAreaNombre">Nombre de la sub área:</label>
-                        <input type="text" class="form-control" id="subAreaNombre" name="sub_nombre"  required>
+                        <input type="text" class="form-control" id="subAreaNombre" name="sub_nombre" required>
                     </div>
                     <div class="mb-3">
                         <label for="subAreaArea">Área perteneciente:</label>
@@ -28,12 +28,13 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="subAreaDescripcion">Descripción de la sub área:</label>
-                        <input type="text" class="form-control" id="subAreaDescripcion" name="sub_descripcion"  required>
+                        <label for="subAreaDescripcion" >Descripción de la sub área:</label>
+                        <input type="text" class="form-control" id="subAreaDescripcion" name="sub_descripcion" required>
                     </div>
                     <div class="mb-3">
                         <label for="subAreaDirectorioImg">Imagen de la sub área:</label>
-                        <input type="file" class="form-control-file" id="subAreaDirectorioImg" name="sub_directorio_img" required>
+                        <input type="file" class="form-control" id="subAreaDirectorioImg" name="sub_directorio_img">
+                        <img id="imagePreview" style="display: none; max-width: 200px; margin-top: 10px;" alt="Preview">
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 </form>

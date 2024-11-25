@@ -128,6 +128,7 @@ async function updateSubArea(event) {
     }
 }
 
+// Función para cargar los detalles de la sub área
 async function loadSubAreaDetails(id) {
     const subAreaId = new URLSearchParams(window.location.search).get('id');
     if (subAreaId) {
@@ -144,15 +145,67 @@ async function loadSubAreaDetails(id) {
                 const imagePreview = document.getElementById('imagePreview');
                 imagePreview.src = subArea.sub_directorio_img;
                 imagePreview.style.display = 'block';
+                // Guardar la ruta de la imagen actual en un data attribute
+                imagePreview.dataset.currentImage = subArea.sub_directorio_img;
             } else {
-                alert('Sub área no encontrada.');
+                throw new Error('Sub área no encontrada.');
             }
         } catch (error) {
             console.error('Error al cargar los detalles de la sub área:', error);
-            alert('Error al cargar los detalles. Intente de nuevo.');
+            // No mostrar el alert aquí
         }
     }
 }
+
+// Función para actualizar una sub área existente
+async function updateSubArea(event) {
+    event.preventDefault();
+    try {
+        const formData = new FormData(event.target);
+        const id = new URLSearchParams(window.location.search).get('id');
+        const fileInput = document.getElementById('subAreaDirectorioImg');
+        const imagePreview = document.getElementById('imagePreview');
+        
+        // Si no se seleccionó un nuevo archivo, eliminamos el campo vacío del FormData
+        if (!fileInput.files || fileInput.files.length === 0) {
+            formData.delete('sub_directorio_img');
+            // Si existe una imagen actual, la agregamos como string
+            if (imagePreview.dataset.currentImage) {
+                formData.append('current_image', imagePreview.dataset.currentImage);
+            }
+        }
+        
+        const response = await fetch(`/api/sub_areas/${id}`, {
+            method: 'PUT',
+            body: formData
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error al actualizar la sub área.');
+        }
+
+        alert('Sub área actualizada con éxito.');
+        window.location.href = '/sub_areas';
+    } catch (error) {
+        console.error("Error al actualizar la sub área:", error);
+        alert(`Error: ${error.message}`);
+    }
+}
+
+// Evento para previsualizar la imagen seleccionada
+document.getElementById('subAreaDirectorioImg').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
 
 document.getElementById('subAreaDirectorioImg').addEventListener('change', function(event) {
     const file = event.target.files[0];

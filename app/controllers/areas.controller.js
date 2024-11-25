@@ -15,11 +15,11 @@ export const methods = {
 createArea: async (req, res) => {
 
      try {
-        const { area_nombre, area_descripcion } = req.body;
+        const { area_nombre, area_descripcion, area_requisitos, area_sanciones } = req.body;
         const area_directorio_img = req.file ? `/media/${req.file.filename}` : null;
         const [result] = await connection.query(
-            'INSERT INTO area (area_nombre, area_descripcion, area_directorio_img, area_estado) VALUES (?, ?, ?, 1)',
-            [area_nombre, area_descripcion, area_directorio_img]
+            'INSERT INTO area (area_nombre, area_descripcion, area_requisitos, area_sanciones, area_directorio_img, area_estado) VALUES (?, ?, ?, ?, ?, ?)',
+            [area_nombre, area_descripcion, area_requisitos, area_sanciones, area_directorio_img, 1]
         );
         res.json({ id: result.insertId, message: "Área creada exitosamente", redirect: "/area" });
     } catch (error) {
@@ -32,7 +32,7 @@ createArea: async (req, res) => {
     updateArea: async (req, res) => {
         try {
             const { id } = req.params; // Obtener el ID desde los parámetros de la solicitud
-            const { area_nombre, area_descripcion } = req.body;
+            const { area_nombre, area_descripcion, area_requisitos, area_sanciones } = req.body;
     
             // Validar que se reciban los datos necesarios
             if (!area_nombre || !area_descripcion) {
@@ -43,8 +43,8 @@ createArea: async (req, res) => {
             const area_directorio_img = req.file ? `/media/${req.file.filename}` : req.body.area_directorio_img;
     
             const [result] = await connection.query(
-                'UPDATE area SET area_nombre = ?, area_descripcion = ?, area_directorio_img = ? WHERE area_id = ?',
-                [area_nombre, area_descripcion, area_directorio_img, id]
+                'UPDATE area SET area_nombre = ?, area_descripcion = ?, area_requisitos = ?, area_sanciones = ?, area_directorio_img = ? WHERE area_id = ?',
+                [area_nombre, area_descripcion,area_requisitos, area_sanciones, area_directorio_img, id]
             );
     
             // Verificar si se actualizó algún registro

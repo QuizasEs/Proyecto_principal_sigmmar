@@ -77,7 +77,9 @@ header a:hover {
 /*serviocio container*/
 #servicio{
     margin-top: 0;
-     text-align: center;
+    text-align: center;
+
+
 }
 /* Estilos generales */
 #contactos {
@@ -191,10 +193,10 @@ header a:hover {
 /* Centrar imágenes y controlar su tamaño */
 img {
     display: block;
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
-    border-radius: 8px; /* Agrega bordes redondeados para un toque elegante */
+    border-radius: 5px; /* Agrega bordes redondeados para un toque elegante */
 }
 
 /* Estilos para el contenedor del área y los subservicios */
@@ -202,19 +204,21 @@ img {
     text-align: center;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    
 }
 
 .area-details h2, .sub-area-item h3 {
-    color: #297799;
+    color: #000000;
+    font-size: 2.5em;
+    font-family: copperplate, serif;
 }
 
 .area-details p, .sub-area-item p {
     font-size: 1.2em;
     line-height: 1.6em;
     color: #555;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Estilo para el botón de envío */
