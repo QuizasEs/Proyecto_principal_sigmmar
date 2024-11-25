@@ -24,7 +24,7 @@ createArea: async (req, res) => {
         res.json({ id: result.insertId, message: "Área creada exitosamente", redirect: "/area" });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: "Error al crear el área" });
+        res.status(500).json({ message: "Error al crear el área" }); 
     } 
 },
 
@@ -43,7 +43,7 @@ createArea: async (req, res) => {
             const area_directorio_img = req.file ? `/media/${req.file.filename}` : req.body.area_directorio_img;
     
             const [result] = await connection.query(
-                'UPDATE area SET area_nombre = ?, area_descripcion = ?, area_requisitos = ?, area_sanciones = ?, area_directorio_img = ? WHERE area_id = ?',
+                'UPDATE area SET area_nombre = ?, area_descripcion = ?, area_requisitos = ?, area_sanciones = ?, area_directorio_img = ?, area_fecha_actualizacion = NOW() WHERE area_id = ?',
                 [area_nombre, area_descripcion,area_requisitos, area_sanciones, area_directorio_img, id]
             );
     

@@ -48,7 +48,7 @@ export const methods = {
             const sub_directorio_img = req.file ? `/media/${req.file.filename}` : subArea[0].sub_directorio_img;
 
             await connection.query(
-                'UPDATE sub_area SET sub_nombre = ?, sub_descripcion = ?, area_id = ?, sub_directorio_img = ? WHERE sub_id = ?',
+                'UPDATE sub_area SET sub_nombre = ?, sub_descripcion = ?, area_id = ?, sub_directorio_img = ?, sub_fecha_ultima_actualizacion = NOW() WHERE sub_id = ?',
                 [sub_nombre, sub_descripcion, area_id, sub_directorio_img, id]
             );
             res.json({ message: "Sub área actualizada exitosamente" });

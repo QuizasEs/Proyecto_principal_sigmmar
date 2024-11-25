@@ -327,29 +327,30 @@ async function loadAreas() {
 // Función asincrónica para registrar un área
 
 document.getElementById("areaFormCreate")?.addEventListener("submit", async function (e) {
-    e.preventDefault(); // Prevenir comportamiento predeterminado del formulario
+  e.preventDefault(); // Prevenir comportamiento predeterminado del formulario
 
-    try {
-      //llama a los datos del formulario atravez del atributio name
+  try {
+      // Llama a los datos del formulario a través del atributo name
       const formData = new FormData(document.getElementById("areaFormCreate")); // Obtener los datos del formulario
       const response = await fetch("/api/areas", {
-        method: "POST",
-        body: formData,
+          method: "POST",
+          body: formData,
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Error al registrar el área.");
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Error al registrar el área.");
       }
 
       // Mostrar mensaje de éxito y redirigir
       alert("Área registrada con éxito");
       window.location.href = "/area";
-    } catch (error) {
-      //Mostrar mensaje de error
+  } catch (error) {
+      // Mostrar mensaje de error
       alert(`Error: ${error.message}`);
-    }
-  });
+  }
+});
+
 
 // Función para eliminar un área
 async function deleteArea(id) {
