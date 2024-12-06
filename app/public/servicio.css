@@ -199,22 +199,35 @@ img {
     border-radius: 5px; /* Agrega bordes redondeados para un toque elegante */
 }
 
+
 /* Estilos para el contenedor del área y los subservicios */
 .area-details, .sub-area-item {
-    text-align: center;
     margin: 20px auto;
     padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: #ffffff;
-    
 }
 
+
 .area-details h2, .sub-area-item h3 {
+    text-align: center;
     color: #000000;
     font-size: 2.5em;
     font-family: copperplate, serif;
 }
+.area-details ul, .sub-area-item ul {
+    text-align: start;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #555;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 .area-details p, .sub-area-item p {
+    text-align: start;
     font-size: 1.2em;
     line-height: 1.6em;
     color: #555;
@@ -273,14 +286,103 @@ button[type="submit"]:hover {
 }
 
 /* Footer elegante y minimalista */
-footer {
-    padding: 20px;
-    background-color: #333;
-    color: #f4f4f4;
-}
+/* Footer */
 
-footer p {
-    font-size: 1em;
-    color: #ccc;
-    text-align: center;
-}
+.footer {
+    background-color: #2b2b2b; /* Gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Footer links section */
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 20px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 10%;
+  }
+  
+  .footer-links ul li {
+    margin: 1px 0;
+  }
+  
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #d3d3d3; /* Cambiar a un gris más claro */
+    text-decoration: underline;
+  }
+  
+  /* Indicatives (column titles) */
+  .indicative {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffffff; /* Subrayado elegante */
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Images next to links */
+  .footer-logo {
+    width: 20px; /* Tamaño pequeño */
+    height: auto;
+    margin-right: 10px; /* Espacio entre imagen y texto */
+    transition: transform 0.3s ease-in-out; /* Animación hover */
+  }
+  
+  .footer-logo:hover {
+    transform: scale(1.2); /* Aumentar ligeramente al pasar el mouse */
+  }
+  
+  /* Footer bottom section */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #555555; /* Línea separadora */
+    padding-top: 20px;
+    font-size: 12px;
+  }
+  
+  .footer-bottom .footer-logo img {
+    max-width: 50px; /* Tamaño del logotipo en la parte inferior */
+    height: auto;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    text-align: right;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 720px) {
+    .footer-links {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+      text-align: center;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  }
+  

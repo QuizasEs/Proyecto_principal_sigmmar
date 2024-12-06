@@ -18,7 +18,7 @@ export const methods ={
     
             // Obtiene la información del área principal
             const [areaResult] = await connection.query(
-                'SELECT area_nombre, area_descripcion, area_directorio_img FROM area WHERE area_id = ? AND area_estado = 1',
+                'SELECT area_nombre, area_descripcion, area_directorio_img, area_requisitos, area_sanciones FROM area WHERE area_id = ? AND area_estado = 1',
                 [area_id]
             );
             

@@ -21,6 +21,13 @@ async function getServicesDetalle() {
         // Limpia el contenedor antes de agregar los detalles del área
         container.innerHTML = '';
 
+        // Función para procesar texto en formato de lista
+        const parseToList = (text) => {
+            if (!text) return ''; // Manejo de caso donde el texto sea vacío
+            const items = text.split('•').filter(item => item.trim() !== ""); // Divide y elimina elementos vacíos
+            return `<ul>${items.map(item => `<li>${item.trim()}</li>`).join('')}</ul>`; // Genera una lista HTML
+        };
+
         // Muestra la información del área principal
         const areaElement = document.createElement('div');
         areaElement.classList.add('area-details');
@@ -28,6 +35,11 @@ async function getServicesDetalle() {
             <h2>${area.area_nombre}</h2>
             <img src="${area.area_directorio_img}" alt="${area.area_nombre}" style="width:50%;height:auto;">
             <p>${area.area_descripcion}</p>
+            <h2>Requisitos</h2>
+            ${parseToList(area.area_requisitos)} <!-- Convierte a lista -->
+            <h2>Sanciones</h2>
+            ${parseToList(area.area_sanciones)} <!-- Convierte a lista -->
+
         `;
         container.appendChild(areaElement);
 
