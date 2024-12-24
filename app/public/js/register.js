@@ -12,7 +12,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     try {
         
         // Envía una solicitud POST a la URL especificada con los datos del formulario
-        const res = await fetch("http://localhost:5000/api/register", {
+        const res = await fetch("/api/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json" // Especifica que el contenido es JSON
@@ -26,10 +26,11 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
                 lastnamemother: e.target.children.lastnamemother.value, // Obtiene el valor del campo "lastnamemother"
                 telefono: e.target.children.telefono.value, // Obtiene el valor del campo "telefono"
             })
+            
         });
         
         // Si la respuesta no es exitosa, muestra el mensaje de error
-        if (!res.ok) return mensajeError.classList.toggle("escondido", false);
+        if (!res.ok) return alert("Error al enviar la solicitud. Por favor, inténtalo de nuevo.");
         
         // Convierte la respuesta a JSON
         const resJson = await res.json();
@@ -40,6 +41,6 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         }
     } catch (error) {
         console.error("Error:", error);
-        mensajeError.classList.toggle("escondido", false);
+        alert("Error al enviar la solicitud. Por favor, inténtalo de nuevo.");
     }
 });

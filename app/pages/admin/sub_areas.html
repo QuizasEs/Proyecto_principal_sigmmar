@@ -13,9 +13,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="../public/media/logo.jpeg" alt="Logo Empresarial" class="d-inline-block align-text-top" style="height: 40px;">
-                    Sigmmar
+                <a class="navbar-brand" href="/">
+                    <img src="media/logo.jpeg" alt="Logo Empresarial" class="d-inline-block align-text-middle" style="height: 70px; font-size: 30px;">
+                    SIGMMAR
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,16 +23,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="/admin">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/area">Áreas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/sub_areas">Sub Áreas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/mensajes">Mensajes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/usuarios">Usuarios</a>
@@ -45,7 +42,6 @@
                 </div>
             </div>
         </nav>
-        
     </header>
     <div class="container mt-5">
         <h1 class="mb-4 text-center fw-bold text-secondary">Sub Áreas</h1>
@@ -54,7 +50,7 @@
             <div class="d-flex justify-content-end mb-3">
                 <button type="submit" class="btn btn-primary" onclick="window.location.href ='/crear_sub_areas'">Crear Sub Área</button>
             </div>
-    
+            <!-- Tabla de sub areas -->
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-primary text-white fw-bold text-center">Áreas Registradas</div>
                 <div class="card-body p-0 table-responsive">

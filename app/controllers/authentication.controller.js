@@ -84,13 +84,6 @@ async function register(req, res) {
             message: "Este usuario ya existe" 
         });
     }
-    //verifica que el estado del las credencialesw de usuario con las que se quiere ingresar esten disponibles
-    if (usuarioARevisar.us_estado === 0) {
-        return res.status(400).send({ 
-            status: "Error", 
-            message: "Este usuario no esta permitodo" 
-        });
-    }
     // Genera una sal para encriptar la contraseña
     const salt = await bcryptjs.genSalt(3);
     const hashPassword = await bcryptjs.hash(password, salt);
@@ -104,7 +97,7 @@ async function register(req, res) {
     return res.status(201).send({
         status: "ok", 
         message: `Usuario ${user} agregado`, 
-        redirect: "/" // Redirige a la página principal
+        redirect: "/usuarios" // Redirige a la página principal
     });
 }
 

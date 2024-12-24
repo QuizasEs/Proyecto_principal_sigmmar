@@ -24,42 +24,6 @@ function cargarUsuario() {
     }
 }
 
-// Manejar el envío del formulario para modificar el usuario
-/* 
-function manejarEnvioFormulario() {
-    document.getElementById('modificarUsuarioForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const userData = {
-            us_username: document.getElementById('username').value,
-            us_nombres: document.getElementById('nombres').value,
-            us_ap_paterno: document.getElementById('ap_paterno').value,
-            us_ap_materno: document.getElementById('ap_materno').value,
-            us_correo: document.getElementById('correo').value,
-            us_telefono: document.getElementById('telefono').value,
-        };
-
-        fetch(`/api/users/${userId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al actualizar el usuario');
-                }
-                return response.json();
-            })
-            .then(result => {
-                alert(result.message);
-                window.location.href = "/usuarios.html";
-            })
-            .catch(error => console.error('Error al actualizar el usuario:', error));
-    });
-} */
-
 // Cargar los usuarios y crear la tabla
 function cargarUsuarios() {
     fetch('/api/users')
@@ -75,7 +39,6 @@ function cargarUsuarios() {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${user.us_username}</td>
-                    <td>${user.us_password}</td>
                     <td>${user.us_nombres}</td>
                     <td>${user.us_ap_paterno}</td>
                     <td>${user.us_ap_materno}</td>

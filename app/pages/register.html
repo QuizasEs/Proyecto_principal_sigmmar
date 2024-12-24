@@ -34,6 +34,9 @@
                                     <input type="text" name="user" id="user" placeholder="Nick usuario" class="form-control">
                                     <label for="password" class="form-label">Contraseña</label>
                                     <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
+                                    <div>
+                                        <input type="checkbox" id="show-password" class="show-password checkbox"> <label for="show-password">Mostrar contraseña
+                                    </div>
                                     <label for="email" class="form-label">Correo</label>
                                     <input type="email" name="email" id="email" placeholder="Correo" class="form-control">
                                     <label for="username" class="form-label">Nombre de usuario</label>
@@ -46,13 +49,20 @@
                                     <input type="text" name="telefono" id="telefono" placeholder="Teléfono" class="form-control">
                                     <br>
                                 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                                <p class="text-secondary text-center">Recuerde que el usuario y contraseña solo podran ser modificados por el encargado de sistemas, por lo que se recomienda verificar correctamente los datos ingresados.
                             </form>
-                            <p class="text-center mt-3">¿Ya tienes cuenta? <a href="/" class="text-primary">Inicia sesión aquí</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script> 
+        const passwordInput = document.getElementById('password'); 
+        const showPasswordCheckbox = document.getElementById('show-password'); 
+        showPasswordCheckbox.addEventListener('change', function() { if (this.checked) { passwordInput.type = 'text'; } 
+        else { passwordInput.type = 'password'; } 
+        });
+    </script>
 </body>
 </html>
