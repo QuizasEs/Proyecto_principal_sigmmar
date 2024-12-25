@@ -7,7 +7,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     e.preventDefault();
     
     // Imprime en la consola el valor del campo "user" del formulario
-    console.log(e.target.children.user.value);
+    //console.log(e.target.children.user.value);
     
     try {
         

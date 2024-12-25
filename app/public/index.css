@@ -24,25 +24,25 @@ button {
     border-radius: 6px;
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    color: white;
-    background-color: #2E86AB;
+    color: #E4E5EA;
+    background-color: #16354D;
     transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #297799;
+    background-color: #6B99C3;
 }
 .container {
     max-width: 1200px;
     margin: auto;
 }
 .color-acento {
-    color: #297799;
+    color: #6B99C3;
 }
 
 /* Estilos del header y navbar */
 /* General header styles */
 header {
-    background-color: rgb(245, 245, 245);
+    background-color: #E4E5EA;
     position: fixed;
     width: 100%;
     top: 0;
@@ -57,7 +57,7 @@ header {
 /* Logo styles */
 header .logo {
     font-weight: bold;
-    color: #2E86AB;
+    color: #6B99C3;
     font-size: 1.6em;
 }
 
@@ -77,7 +77,7 @@ header a {
 }
 
 header a:hover {
-    color: #2E86AB;
+    color: #6B99C3;
 }
 
 /* Hamburger menu styles */
@@ -85,7 +85,7 @@ header a:hover {
     display: none;
     cursor: pointer;
     font-size: 1.8em;
-    color: #2E86AB;
+    color: #6B99C3;
 }
 
 .menu-toggle .bar {
@@ -106,7 +106,7 @@ header a:hover {
         top: 100%; /* Justo debajo del header */
         left: 0;
         width: 100%;
-        background-color: rgb(245, 245, 245);
+        background-color: #E4E5EA;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
@@ -146,7 +146,7 @@ header a:hover {
     text-align: center;
     flex-direction: column;
     min-height: 90vh;
-    color: white;
+    color: #E4E5EA;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/media/3.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -161,9 +161,9 @@ header a:hover {
 }
 /* Estilos para sección servicios */
 #servicios {
-    background-color: rgb(30, 30, 30);
+    background-color: #0C151C;
     text-align: center;
-    color: white;
+    color: #E4E5EA;
     padding: 50px 0;
     position: relative;
     z-index: 1;
@@ -202,7 +202,7 @@ header a:hover {
     height: 300px;
     width: 100%;
     text-align: center;
-    color: white;
+    color: #E4E5EA;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -255,77 +255,112 @@ header a:hover {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+
 /* Sección de contactos */
-#contactos {
-    padding: 50px 0;
-    text-align: center;
-}
+/* Estilos para el contenedor principal */
 #contactos .container {
-    max-width: 600px;
-    margin: auto;
-justify-content: center;
-}
-
-/* Formulario de contacto */
-.container-contact-form {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
-    background: #fff;
-    padding: 30px;
+    padding: 20px 10%;
+    background-color: #E4E5EA;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el bloque */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-}
-.form-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.contact-camp {
+/* Estilos para la sección de redes sociales */
+#contactos .social_media {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
 }
-.contact-camp .contact-nom,
-.contact-camp .contact-email {
-    flex: 1;
-    min-width: 200px;
-}
-.contact-nom input,
-.contact-email input,
-.contact-phone input,
-.contact-message textarea {
+
+
+#contactos .social_media h1 {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1.3em;
-    color: #333;
-}
-.contact-message textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-.direccion {
-    background-color: rgb(30, 30, 30);
     text-align: center;
-    color: white;
-    padding: 50px 0;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 20px;
+    font-size: 2.5em;
 
 }
-.direccion .container {
-    text-align: center;
-    padding: 100px 12px;
 
+
+/* Estilos para las páginas de TikTok y Facebook */
+#contactos .tiktop_page, #contactos .facebook_page {
+    flex: 1 1 calc(50% - 10px);
 }
+
+/* Estilos generales para los iframes y blockquotes */
+#contactos iframe, #contactos blockquote {
+    max-width: 100%;
+
+    height: 500px;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #contactos .tiktop_page, #contactos .facebook_page {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+/*estilos para direccion*/
+
+/* Estilos para el contenedor principal */
+#direccion .container {
+    max-width: 100%;
+    padding: 100px ;
+    background-color: #D2D2D4;
+    color: #16354D;
+    text-align: center;
+}
+
+/* Estilos para los títulos */
+#direccion h1, #direccion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+#direccion h2 {
+    font-size: 1.5em;
+}
+
+/* Estilos para las sucursales */
+#direccion .maps > div {
+    margin-bottom: 20px;
+}
+
+/* Estilos generales para los iframes */
+#direccion iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #direccion .container {
+        padding: 100px 5%;
+    }
+}
+
 
 /* Footer */
 
 .footer{
     width: 100%;
-    background-color: #333333;
+    background-color: #0C151C;
     margin-bottom: 0;
     padding: 30px 0;
 }
@@ -349,13 +384,14 @@ justify-content: center;
     width: 250px;
  }
  .footer .group_1 .box h2{
-    color: #ffffff;
+    color: #E4E5EA;
     margin-bottom: 20px;
     font-size: 1.5em;
  }
  .footer .group_1 .box p{
-    color : #efefef;
+    color : #acacac;
     margin-bottom: 20px;
+    font-size: 1em;
 
  }
  .footer .group_1 .box .social_red a{
@@ -365,6 +401,7 @@ justify-content: center;
     height: 45px;
     line-height: 45px;
     margin-right: 10px;
+
  }
  .footer .group_1 .box .social_red a :hover{
     transform: scale(1.2);
@@ -375,7 +412,7 @@ footer .group_2{
     margin: auto;
     display: flex;
     justify-content: center;            
-    color: #ffffff;
+    color: #E4E5EA;
 }
 @media (max-width: 768px) {
     .footer .group_1{
@@ -399,7 +436,7 @@ footer .group_2{
 }
   
 /* Media Queries */
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr;
     }
@@ -427,7 +464,7 @@ footer .group_2{
         max-width: 600px;
     }
     #nosotros .img-container {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(media/1.jpeg);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(media/6.jpeg);
         background-size: cover;
         background-position: center;
         height: 600px;

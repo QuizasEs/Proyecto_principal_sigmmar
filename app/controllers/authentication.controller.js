@@ -9,7 +9,7 @@ dotenv.config();
 
 // Función para manejar el inicio de sesión
 async function login(req, res) {
-    console.log(req.body); // Imprime el cuerpo de la solicitud para depuración
+    //console.log(req.body); // Imprime el cuerpo de la solicitud para depuración
     const { user, password } = req.body;
 
     if (!user || !password) {
@@ -63,7 +63,7 @@ async function login(req, res) {
 
 // Función para manejar el registro de nuevos usuarios
 async function register(req, res) {
-    console.log(req.body); // Depuración
+    //console.log(req.body); // Depuración
     const { user, email, password, username, lastnamefather, lastnamemother, telefono } = req.body;
 
     if (!user || !email || !password || !username || !lastnamefather || !lastnamemother || !telefono) {

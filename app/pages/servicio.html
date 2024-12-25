@@ -11,60 +11,93 @@
         <meta property="og:description" content="Consultora especialista en servicios multidisciplinarios en Bolivia">
         <meta property="og:type" content="business.business">
         <meta property="og:url" content="https://www.sigmmar.com"> 
-        <link rel="icon" href="media/logo.png" type="image/npg">
+        <link rel="icon" href="media/logo.png" type="image/png">
     <link rel="stylesheet" href="servicio.css">
+    <script>
+        // Función para alternar menú móvil
+        function toggleMenu() {
+            const nav = document.querySelector("header nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <p class="logo">SIGMMAR</p>
-            <nav>
-                <a href="/">Inicio</a>
-                <a href="#contactos">Contactos</a>
-
-            </nav>
+        <p class="logo">SIGMMAR</p>
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
+        <!-- Menú de navegación -->
+        <nav>
+            <a href="#hero">Inicio</a>
+            <a href="#servicio">Servicios</a>
+            <a href="#contactos">Redes Sociales</a>
+            <a href="#direccion">Dirección</a>
+        </nav>
     </header>
     
     <section id="hero">
+        <br>
+    <br>
+    <br>
+    <br>
         <h1>CONSULTORA <span class="color-acento">BOLIVIANA</span> ESPECIALISTA EN CONSULTORÍA MINERA</h1>
     </section>
     <section id="servicio">
         <!-- Aquí se insertarán los detalles del área y sus subservicios -->
     </section>
+
+
+
     <section id="contactos">
         <div class="container">
-            <h1>Contáctanos</h1>
-            <p>Llena el formulario a continuación y nos pondremos en contacto contigo a la brevedad.</p>
-        </div>
-        <div class="container-contact-form">
-            <form class="form-contact">
-                <div class="contact-camp">
-                    <div class="contact-nom">
-                        <label for="name">Nombre</label>
-                        <input id="name" placeholder="Ingresa tu nombre" />
-                    </div>
-                    <div class="contact-email">
-                        <label for="email">Correo electrónico</label>
-                        <input id="email" type="email" placeholder="Ingresa tu correo" />
-                    </div>
+            <br>
+            <br>
+            <br>
+            <div class="social_media">
+                <h1>Siguenos En Nuestras <span class="color-acento">Redes Sociales</span></h1>
+                <div class="tiktop_page">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sigmmar.srl" data-unique-id="sigmmar.srl"
+                    data-embed-type="creator" style="max-width: 500px; min-width: 288px;">
+                    <section> <a target="_blank"
+                        href="https://www.tiktok.com/@sigmmar.srl?refer=creator_embed">@sigmmar.srl</a> </section>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed.js"></script>
                 </div>
-                <div class="contact-phone">
-                    <label for="phone">Teléfono</label>
-                    <input id="phone" type="tel" placeholder="Ingresa tu teléfono" />
+                <div class="facebook_page">
+                    <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61552451645135&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                    width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
-                <div class="contact-message">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" rows="5" placeholder="Escribe tu mensaje"></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
+            </div>
         </div>
     </section>
-  
-    <section id="otros">
+ 
+    <section id="direccion">
         <div class="container">
-            <p>Alguito más</p>
+            <h1><span class="color-acento">Direcciones</span></h1>
+            <div class="maps">
+
+                <h2>Sucursal <span class="color-acento">La Paz</span></h2>
+                <div>
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3825.4896237932626!2d-68.1336944!3d-16.5013611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDMwJzA0LjkiUyA2OMKwMDgnMDEuMyJX!5e0!3m2!1ses-419!2sbo!4v1733488368594!5m2!1ses-419!2sbo"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <h2>Sucursal <span class="color-acento">Sucre</span></h2>
+                <div>
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d45053.57635699493!2d-65.75798598216792!3d-19.597054552421948!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDM0JzQ5LjYiUyA2NcKwNDUnMDUuMCJX!5e0!3m2!1ses-419!2sbo!4v1733488270634!5m2!1ses-419!2sbo"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -72,33 +105,37 @@
         <div class="group_1">
             <div class="box">
                 <figure>
-                    <a href="">
-                        <img src="media/logo.png" alt="logo">
+                    <a href="/">
+                        <img src="media/logo_1.png" alt="logo">
                     </a>
                 </figure>
             </div>
             <div class="box">
-                <h2>SOBRE NOSOTROS</h2>
-            <p>
+                <h2>contáctanos</h2>
                 <p>
-                    texto indefinido
+                    Potosí 65494351
+
+                </p>
+                <p>
+                    La paz 75722885 - 76505187
                 </p>
             </div>
             <div class="box">
                 <h2>SIGUENOS</h2>
                 <div class="social_red">
-                    <a href=""><img src="media/facebook.svg" alt="facebook" ></a>
-                    <a href=""><img src="media/twitter.svg" alt="x"></a>
-                    <a href=""><img src="media/whatsapp.svg" alt="whatsapp" ></a>
+
+                    <a href="https://www.facebook.com/profile.php?id=61552451645135"><img src="media/facebook.svg" alt="facebook" style="width: auto; height: 30px;"></a>
+                    <a href=""><img src="media/twitter.svg" alt="x" style="width: auto; height: 30px;"></a>
+                    <a href=""><img src="media/whatsapp.svg" alt="whatsapp" style="width: auto; height: 30px;"></a>
                 </div>
-         
+
             </div>
         </div>
         <dib class="group_2">
             <small>Copyright © 2024 SIGMMAR - BOLIVIA</small>
         </dib>
     </footer>
-      
+
     <script src="/js/servicesDetalle.js"></script>
 </body>
 </html>

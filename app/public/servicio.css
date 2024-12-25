@@ -1,9 +1,22 @@
 /* Estilos generales de body */
+
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #eeeeee;
 }
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.7em; }
+h3 { font-size: 2em; }
+p { font-size: 1.25em; 
+color: #414040;}
+ul { list-style: none; }
 button {
     font-size: 1.5em;
     font-weight: bold;
@@ -11,50 +24,73 @@ button {
     border-radius: 6px;
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    color: white;
-    background-color: #2E86AB;
+    color: #E4E5EA;
+    background-color: #16354D;
+    transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #297799;
+    background-color: #6B99C3;
 }
 .container {
     max-width: 1200px;
     margin: auto;
 }
 .color-acento {
-    color: #297799;
+    color: #6B99C3;
+
 }
 
 /* Estilos navbar */
 header {
-    background-color: rgb(245, 245, 245);
+    background-color: #E4E5EA;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 header .logo {
-    margin: 0;
-    padding: 25px 30px;
     font-weight: bold;
-    color: #2E86AB;
+    color: #6B99C3;
     font-size: 1.6em;
 }
-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
+/* Navigation styles */
 header nav {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 25px;
+    flex-direction: row;
+    gap: 15px;
 }
+
 header a {
     padding: 5px 12px;
     text-decoration: none;
     font-weight: bold;
     color: black;
+    transition: color 0.3s;
 }
+
 header a:hover {
-    color: #2E86AB;
+    color: #6B99C3;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: #6B99C3;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+    transition: background-color 0.3s;
 }
 
 /* Estilos de inicio o hero */
@@ -65,14 +101,14 @@ header a:hover {
     text-align: center;
     flex-direction: column;
     min-height: 90vh;
-    color: white;
+    color: #E4E5EA;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(media/5.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 #hero h1 {
-    color: white;
+    color: #E4E5EA;
 }
 /*serviocio container*/
 #servicio{
@@ -82,114 +118,47 @@ header a:hover {
 
 }
 /* Estilos generales */
-#contactos {
-    padding: 50px 0;
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header nav {
+        display: none; /* Oculta el menú inicialmente */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: #E4E5EA;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav.active {
+        display: flex; /* Muestra el menú cuando se activa */
+    }
+
+    header a {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú hamburguesa */
+    }
 }
   
-#contactos .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+@media (max-width: 480px) {
+    header .logo {
+        align-items: center; /* Reduce el tamaño del logo */
+    }
+
+    header a {
+        font-size: 0.9em; /* Ajusta el tamaño del texto */
+    }
+
+    .menu-toggle {
+        font-size: 1.6em; /* Ajusta el tamaño del ícono de hamburguesa */
+    }
 }
 
-#contactos p {
-    font-size: 1.3em;
-    color: #666;
-    margin-bottom: 40px;
-}
-  
-/* Estilo para el bloque del formulario con sombra */
-.container-contact-form {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el bloque */
-}
-  
-/* Estilos para el formulario */
-.form-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-  
-.contact-camp {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-  
-.contact-camp .contact-nom,
-.contact-camp .contact-email {
-    flex: 1;
-    min-width: 200px;
-}
-  
-.contact-nom label,
-.contact-email label,
-.contact-phone label,
-.contact-message label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-    width: 100%; /* Asegura que no se mueva horizontalmente */
-    white-space: nowrap; /* Evita que el texto del label se desborde en una nueva línea */
-    overflow: hidden; /* Oculta cualquier contenido que se desborde horizontalmente */
-    text-overflow: ellipsis;
-}
-  
-.contact-nom input,
-.contact-email input,
-.contact-phone input,
-.contact-message textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1.3em;
-    color: #333;
-}
-  
-.contact-nom input::placeholder,
-.contact-email input::placeholder,
-.contact-phone input::placeholder,
-.contact-message textarea::placeholder {
-    color: #999;
-}
-  
-/* Restringir el tamaño del textarea a solo vertical */
-.contact-message textarea {
-    resize: vertical; /* Permite solo el redimensionamiento vertical */
-    min-height: 80px; /* Altura mínima para el textarea */
-}
-  
-/* Estilos responsivos */
-@media (min-width: 750px) {
-    header {
-        position: fixed;
-        width: 100%;
-    }
-    header .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    header nav {
-        flex-direction: row;
-        padding-bottom: 0;
-        padding-right: 20px;
-    }
-    #hero h1 {
-        font-size: 5em;
-    }
-    button {
-        width: 100%;
-        padding: 15px;
-    }
-}
-  
 /* Centrar imágenes y controlar su tamaño */
 img {
     display: block;
@@ -201,6 +170,9 @@ img {
 
 
 /* Estilos para el contenedor del área y los subservicios */
+#servicio {
+    padding-top: 30px;
+}
 .area-details, .sub-area-item {
     margin: 20px auto;
     padding: 20px;
@@ -234,24 +206,6 @@ img {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Estilo para el botón de envío */
-button[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.3em;
-    font-weight: bold;
-    background-color: #2E86AB;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #297799;
-    cursor: pointer;
-}
-
 /* Ajustes responsivos para secciones */
 @media (max-width: 768px) {
     header .logo, #hero h1 {
@@ -270,19 +224,102 @@ button[type="submit"]:hover {
     }
 }
 
-/* Mejora de estilo en secciones y contenedores */
-#servicio {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
+/* Sección de contactos */
+/* Estilos para el contenedor principal */
+#contactos .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 10%;
+    background-color: #0C151C;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#otros .container {
-    padding: 20px;
-    font-size: 1.2em;
-    color: #333;
-    background: #e6e6e6;
-    border-radius: 8px;
+/* Estilos para la sección de redes sociales */
+#contactos .social_media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+#contactos .social_media h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #E4E5EA;
+}
+
+
+/* Estilos para las páginas de TikTok y Facebook */
+#contactos .tiktop_page, #contactos .facebook_page {
+    flex: 1 1 calc(50% - 10px);
+}
+
+/* Estilos generales para los iframes y blockquotes */
+#contactos iframe, #contactos blockquote {
+    max-width: 100%;
+
+    height: 500px;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #contactos .tiktop_page, #contactos .facebook_page {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+/*estilos para direccion*/
+
+/* Estilos para el contenedor principal */
+#direccion .container {
+    max-width: 100%;
+    padding: 100px ;
+    background-color: #D2D2D4;
+    color: #16354D;
+    text-align: center;
+}
+
+/* Estilos para los títulos */
+#direccion h1, #direccion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+#direccion h2 {
+    font-size: 1.5em;
+}
+
+/* Estilos para las sucursales */
+#direccion .maps > div {
+    margin-bottom: 20px;
+}
+
+/* Estilos generales para los iframes */
+#direccion iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #direccion .container {
+        padding: 100px 5%;
+    }
 }
 
 
@@ -290,7 +327,7 @@ button[type="submit"]:hover {
 
 .footer{
     width: 100%;
-    background-color: #333333;
+    background-color: #0C151C;
     margin-bottom: 0;
     padding: 30px 0;
 }
@@ -314,13 +351,14 @@ button[type="submit"]:hover {
     width: 250px;
  }
  .footer .group_1 .box h2{
-    color: #ffffff;
+    color: #E4E5EA;
     margin-bottom: 20px;
     font-size: 1.5em;
  }
  .footer .group_1 .box p{
-    color : #efefef;
+    color : #acacac;
     margin-bottom: 20px;
+    font-size: 1em;
 
  }
  .footer .group_1 .box .social_red a{
@@ -330,6 +368,7 @@ button[type="submit"]:hover {
     height: 45px;
     line-height: 45px;
     margin-right: 10px;
+
  }
  .footer .group_1 .box .social_red a :hover{
     transform: scale(1.2);
@@ -340,7 +379,7 @@ footer .group_2{
     margin: auto;
     display: flex;
     justify-content: center;            
-    color: #ffffff;
+    color: #E4E5EA;
 }
 @media (max-width: 768px) {
     .footer .group_1{

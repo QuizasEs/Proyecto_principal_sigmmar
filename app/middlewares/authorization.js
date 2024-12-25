@@ -37,12 +37,12 @@ async function revisarcookie(req) {
 
         // Verifica y decodifica el token JWT
         const decodificada = jsonwebtoken.verify(cookieJWT.slice(4), process.env.JWT_SECRET);
-        console.log(decodificada);
+        //console.log(decodificada);
 
         // Busca el usuario en la base de datos
         const [rows] = await connection.query("SELECT * FROM user WHERE us_username = ?", [decodificada.user]);
         const usuarioARevisar = rows[0];
-        console.log(usuarioARevisar);
+        //console.log(usuarioARevisar);
         
         if (!usuarioARevisar) {
             return false; // No se encontró el usuario

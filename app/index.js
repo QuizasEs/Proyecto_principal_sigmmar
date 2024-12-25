@@ -48,7 +48,7 @@ app.use("/media", express.static(path.join(__dirname, "media")));
 
 // Inicia el servidor y conexión a la base de datos
 app.listen(app.get("port"), () => {
-  console.log(`Servidor corriendo en el puerto ${app.get("port")}`);
+  //console.log(`Servidor corriendo en el puerto ${app.get("port")}`);
   connection.connect((err) => {
     if (err) {
       console.error("Error al conectar con la base de datos:", err);
